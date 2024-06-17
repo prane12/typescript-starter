@@ -33,8 +33,8 @@ jobs:
 
       - name: Transfer files to EC2 instance
         run: |
-          scp -r ./dist/* ubuntu@ec2-instance-ip:/home/ubuntu/typescript-starter
+          scp -r ./dist/* ubuntu@13.201.117.251:/home/ubuntu/typescript-starter
 
       - name: SSH into EC2 instance and restart application
         run: |
-          ssh ubuntu@ec2-instance-ip 'cd /home/ubuntu/typescript-starter && npm install --production && pm2 restart all'
+          ssh ubuntu@13.201.117.251 'cd /home/ubuntu/typescript-starter && npm install --production && pm2 restart all'
